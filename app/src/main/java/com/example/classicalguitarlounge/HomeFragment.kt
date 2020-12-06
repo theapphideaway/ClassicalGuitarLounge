@@ -15,22 +15,23 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeFragment : Fragment() {
 
     private lateinit var mainBottomNav: BottomNavigationView
-    private lateinit var iconOne: BottomNavigationItemView
-    private lateinit var iconTwo: BottomNavigationItemView
-    private lateinit var iconThree: BottomNavigationItemView
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when(item.itemId){
-            R.id.action_recents -> {
-                Toast.makeText(requireContext(), "Recents", Toast.LENGTH_LONG).show()
+            R.id.action_home -> {
+                Toast.makeText(requireContext(), "Home", Toast.LENGTH_LONG).show()
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.action_nearby -> {
-                Toast.makeText(requireContext(), "Nearby", Toast.LENGTH_LONG).show()
+            R.id.action_guitars -> {
+                Toast.makeText(requireContext(), "Guitars", Toast.LENGTH_LONG).show()
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.action_favorites -> {
-                Toast.makeText(requireContext(), "Favorites", Toast.LENGTH_LONG).show()
+            R.id.action_saved -> {
+                Toast.makeText(requireContext(), "Saved", Toast.LENGTH_LONG).show()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.action_profile -> {
+                Toast.makeText(requireContext(), "Profile", Toast.LENGTH_LONG).show()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -43,9 +44,6 @@ class HomeFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false).apply{
             mainBottomNav = findViewById(R.id.main_bottom_nav_bnv)
-            iconOne = findViewById(R.id.action_recents)
-            iconTwo = findViewById(R.id.action_nearby)
-            iconThree = findViewById(R.id.action_favorites)
             mainBottomNav.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         }
     }

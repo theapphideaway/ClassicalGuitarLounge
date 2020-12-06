@@ -2,4 +2,9 @@
     <string name="app_name">ClassicalGuitarLounge</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="guitars">Guitars</string>
+    <string name="saved">Saved</string>
+    <string name="nearby">Nearby</string>
+    <string name="profile">Profile</string>
 </resources>

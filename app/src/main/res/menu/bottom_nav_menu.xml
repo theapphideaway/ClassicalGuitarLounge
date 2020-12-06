@@ -2,15 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_recents"
-        android:icon="@android:drawable/ic_secure"
-        android:title="Recents"/>
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"/>
     <item
-        android:id="@+id/action_favorites"
-        android:icon="@android:drawable/ic_input_add"
-        android:title="Favorites"/>
+        android:id="@+id/action_guitars"
+        android:icon="@drawable/ic_classical_guitar_icon"
+        android:title="@string/guitars"/>
     <item
-        android:id="@+id/action_nearby"
-        android:icon="@android:drawable/ic_input_delete"
-        android:title="Nearby"/>
+        android:id="@+id/action_saved"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        android:title="@string/saved"/>
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profile"/>
 </menu>
