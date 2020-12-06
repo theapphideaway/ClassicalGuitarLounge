@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import com.example.classicalguitarlounge.HomeFragment
 import com.example.classicalguitarlounge.R
 import com.google.android.material.textfield.TextInputLayout
 
@@ -27,6 +28,7 @@ class LoginFragment : Fragment() {
     private lateinit var loginBTN: Button
     private lateinit var createAccountTV: TextView
     private lateinit var skipTV: TextView
+    val createAccountFragment = CreateAccountFragment()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -49,13 +51,17 @@ class LoginFragment : Fragment() {
                 }
             }
             loginBTN.setOnClickListener {
-
+                requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_fragment_container, HomeFragment())
+                        .commit()
             }
             createAccountTV.setOnClickListener {
-
+                createAccountFragment.show(requireActivity().supportFragmentManager, "fromLogin")
             }
             skipTV.setOnClickListener {
-
+                requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_fragment_container, HomeFragment())
+                        .commit()
             }
         }
     }

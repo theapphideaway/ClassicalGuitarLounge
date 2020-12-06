@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.classicalguitarlounge.guitars.GuitarsFragment
 import com.example.classicalguitarlounge.posts.PostsFragment
+import com.example.classicalguitarlounge.profile.ProfileFragment
 import com.example.classicalguitarlounge.saved.SavedFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.action_profile -> {
-                navigate(PostsFragment())
+                navigate(ProfileFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -51,7 +52,7 @@ class HomeFragment : Fragment() {
 
     private fun navigate(fragment: Fragment){
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.main_fragment_container, fragment)
+            .replace(R.id.sub_fragment_container, fragment)
             .commit()
     }
 }
