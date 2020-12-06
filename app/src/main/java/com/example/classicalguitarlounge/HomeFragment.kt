@@ -1,15 +1,14 @@
 package com.example.classicalguitarlounge
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.example.classicalguitarlounge.guitars.GuitarsFragment
+import com.example.classicalguitarlounge.posts.PostsFragment
+import com.example.classicalguitarlounge.saved.SavedFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
@@ -19,19 +18,19 @@ class HomeFragment : Fragment() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when(item.itemId){
             R.id.action_home -> {
-                Toast.makeText(requireContext(), "Home", Toast.LENGTH_LONG).show()
+                navigate(PostsFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.action_guitars -> {
-                Toast.makeText(requireContext(), "Guitars", Toast.LENGTH_LONG).show()
+                navigate(GuitarsFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.action_saved -> {
-                Toast.makeText(requireContext(), "Saved", Toast.LENGTH_LONG).show()
+                navigate(SavedFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.action_profile -> {
-                Toast.makeText(requireContext(), "Profile", Toast.LENGTH_LONG).show()
+                navigate(PostsFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -45,6 +44,13 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false).apply{
             mainBottomNav = findViewById(R.id.main_bottom_nav_bnv)
             mainBottomNav.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+            navigate(PostsFragment())
         }
+    }
+
+    private fun navigate(fragment: Fragment){
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.main_fragment_container, fragment)
+            .commit()
     }
 }
