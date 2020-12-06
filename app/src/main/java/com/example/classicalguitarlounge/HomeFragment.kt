@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.classicalguitarlounge.guitars.GuitarsFragment
 import com.example.classicalguitarlounge.posts.PostsFragment
 import com.example.classicalguitarlounge.saved.SavedFragment
